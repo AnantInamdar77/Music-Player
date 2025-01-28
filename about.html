@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Basic Music Player</title>
+    <style>
+        /* Default Light Mode Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #333;
+            color: #f4f4f9;
+        }
+
+        body.dark-mode h1, body.dark-mode h2 {
+            color: #f4f4f9;
+        }
+
+        body.dark-mode p {
+            color: #bbb;
+        }
+
+        body.dark-mode .section {
+            border-bottom: 1px solid #444;
+        }
+
+        /* Button Styles for Dark Mode Toggle */
+        #themeToggleBtn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #themeToggleBtn:hover {
+            background-color: #34495e;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="themeToggleBtn">Switch to Dark Mode</button>
+
+    <h1>About the App: A Basic Music Player</h1>
+    
+    <div class="section">
+        <h2>1. Introduction</h2>
+        <p>This app is a lightweight, straightforward music player designed for simplicity and ease of use. It allows users to listen to their favorite songs, manage playlists, and enjoy music anytime, anywhere, without unnecessary complexity. The goal is to provide a clean and intuitive interface that caters to users who value quick and hassle-free access to their music.</p>
+    </div>
+
+    <div class="section">
+        <h2>2. Core Functionality</h2>
+        <ul>
+            <li><strong>Play and Pause:</strong> A simple and efficient play/pause system that allows users to start and stop songs with a single click.</li>
+            <li><strong>Track Navigation:</strong> Users can move to the next or previous track effortlessly with dedicated buttons.</li>
+            <li><strong>Progress Bar:</strong> An interactive seek bar allows users to skip to specific parts of a song.</li>
+            <li><strong>Song List Display:</strong> The app shows a list of available songs with album art and titles for easy navigation.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>3. Key Features</h2>
+        <ul>
+            <li><strong>Song-Specific Controls:</strong> Each song has its own play/pause button, so users can directly control individual tracks.</li>
+            <li><strong>Real-Time Feedback:</strong> The app dynamically updates icons, song titles, and album art while playing or pausing songs.</li>
+            <li><strong>Master Play Button:</strong> A centralized play/pause button ensures quick control over the entire playlist.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>4. User Interface</h2>
+        <ul>
+            <li><strong>Minimalistic Design:</strong> The app features a clean and straightforward design, making it easy for users to navigate without confusion.</li>
+            <li><strong>Responsive Controls:</strong> Buttons, sliders, and icons respond instantly to user input, creating a smooth experience.</li>
+            <li><strong>Compact Layout:</strong> The app is lightweight and visually uncluttered, ensuring it performs well even on devices with lower specifications.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>5. Accessibility and Compatibility</h2>
+        <ul>
+            <li><strong>Cross-Device Support:</strong> The app works seamlessly on desktops, tablets, and mobile devices.</li>
+            <li><strong>No Internet Dependency:</strong> Users can play songs stored locally on their device without requiring an internet connection.</li>
+            <li><strong>Lightweight Build:</strong> Optimized for speed and efficiency, the app runs smoothly without consuming significant system resources.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>6. Future Roadmap</h2>
+        <ul>
+            <li><strong>Playlist Management:</strong> Add functionality to create, edit, and save playlists for a more organized music experience.</li>
+            <li><strong>Repeat and Shuffle:</strong> Introduce repeat and shuffle options for users to personalize their playback experience further.</li>
+            <li><strong>Volume Control:</strong> Provide an in-app volume slider for better audio management without relying on system volume.</li>
+            <li><strong>Theming Options:</strong> Offer customizable themes, including light and dark modes, to suit user preferences.</li>
+            <li><strong>Song Search:</strong> Add a search bar to quickly locate tracks from the song list.</li>
+            <li><strong>Equalizer Settings:</strong> Introduce a basic equalizer with presets like bass boost or treble enhancement for improved audio customization.</li>
+            <li><strong>Lyrics Integration:</strong> Allow users to view song lyrics during playback for a more engaging experience.</li>
+            <li><strong>Sleep Timer:</strong> Provide a timer feature to automatically stop playback after a set duration, ideal for listening before bedtime.</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>7. Target Audience</h2>
+        <p>Designed for users who prefer simplicity, the app is perfect for anyone who wants a no-frills music player that’s easy to operate. It’s suitable for people who store their favorite songs locally and want quick access without streaming or subscriptions.</p>
+    </div>
+
+    <div class="section">
+        <h2>8. Conclusion</h2>
+        <p>This music player app focuses on delivering the core essentials of a music playback experience in a simple and user-friendly package. With plans to introduce new features such as playlist management and customization, the app will continue evolving to meet user needs. Whether for casual listening or managing a personal music library, this app is built to make your music experience enjoyable, efficient, and hassle-free.</p>
+    </div>
+
+    <script>
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const body = document.body;
+
+        // Check if dark mode is enabled in localStorage
+        if (localStorage.getItem('theme') === 'dark') {
+            body.classList.add('dark-mode');
+            themeToggleBtn.textContent = 'Switch to Light Mode';
+        }
+
+        // Toggle between light and dark mode
+        themeToggleBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                themeToggleBtn.textContent = 'Switch to Light Mode';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                themeToggleBtn.textContent = 'Switch to Dark Mode';
+                localStorage.removeItem('theme');
+            }
+        });
+    </script>
+
+</body>
+</html>
